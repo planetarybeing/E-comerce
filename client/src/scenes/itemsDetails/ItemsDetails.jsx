@@ -6,7 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { shades } from "../../theme";
 import { addToCart } from "../../state";
-import { useParams } from "react=router-dom";
+import { useParams } from "react-router-dom";
 import Item from "../../componets/Item";
 
 const ItemDetails = () => {

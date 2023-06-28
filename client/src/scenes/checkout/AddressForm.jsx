@@ -11,7 +11,7 @@ const AddressForm = ({
 }) => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
 
-  //these functions allow for better code redability
+  //these functions allow for better code readability
   const formattedName = (field) => `${type}.${field}`;
 
   const formattedError = (field) =>
@@ -25,9 +25,9 @@ const AddressForm = ({
 
   return (
     <Box
-      dispaly="grid"
+      display="grid"
       gap="15px"
-      gridTemplateColums="repeat(4, minmax(0, 1fr))"
+      gridTemplateColumns="repeat(4, minmax(0, 1fr))"
       sx={{
         "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
       }}
@@ -40,7 +40,7 @@ const AddressForm = ({
         onChange={handleChange}
         value={values.firstName}
         name={formattedName("firstName")}
-        erorr={formattedError("firstName")}
+        error={formattedError("firstName")}
         helperText={formattedHelper("firstName")}
         sx={{ gridColumn: "span 2" }}
       />
@@ -52,7 +52,7 @@ const AddressForm = ({
         onChange={handleChange}
         value={values.lastName}
         name={formattedName("lastName")}
-        erorr={formattedError("lastName")}
+        error={formattedError("lastName")}
         helperText={formattedHelper("lastName")}
         sx={{ gridColumn: "span 2" }}
       />
@@ -64,7 +64,7 @@ const AddressForm = ({
         onChange={handleChange}
         value={values.country}
         name={formattedName("country")}
-        erorr={formattedError("country")}
+        error={formattedError("country")}
         helperText={formattedHelper("country")}
         sx={{ gridColumn: "span 4" }}
       />
@@ -76,7 +76,7 @@ const AddressForm = ({
         onChange={handleChange}
         value={values.street1}
         name={formattedName("street1")}
-        erorr={formattedError("street1")}
+        error={formattedError("street1")}
         helperText={formattedHelper("street1")}
         sx={{ gridColumn: "span 2" }}
       />
@@ -88,7 +88,7 @@ const AddressForm = ({
         onChange={handleChange}
         value={values.street2}
         name={formattedName("street2")}
-        erorr={formattedError("street2")}
+        error={formattedError("street2")}
         helperText={formattedHelper("street2")}
         sx={{ gridColumn: "span 2" }}
       />
@@ -100,7 +100,7 @@ const AddressForm = ({
         onChange={handleChange}
         value={values.city}
         name={formattedName("city")}
-        erorr={formattedError("city")}
+        error={formattedError("city")}
         helperText={formattedHelper("city")}
         sx={{ gridColumn: "span 2" }}
       />
@@ -112,7 +112,7 @@ const AddressForm = ({
         onChange={handleChange}
         value={values.state}
         name={formattedName("state")}
-        erorr={formattedError("state")}
+        error={formattedError("state")}
         helperText={formattedHelper("state")}
         sx={{ gridColumn: "1fr" }}
       />
@@ -124,7 +124,7 @@ const AddressForm = ({
         onChange={handleChange}
         value={values.zipCode}
         name={formattedName("zipCode")}
-        erorr={formattedError("zipCode")}
+        error={formattedError("zipCode")}
         helperText={formattedHelper("zipCode")}
         sx={{ gridColumn: "span 2" }}
       />

@@ -16,7 +16,7 @@ const Payment = ({ values, touched, errors, handleBlur, handleChange }) => {
           onChange={handleChange}
           value={values.email}
           name="email"
-          erorr={!!touched.email && !!errors.email}
+          error={!!touched.email && !!errors.email}
           helperText={touched.email && errors.email}
           sx={{ gridColumn: "span 4", marginBottom: "15px" }}
         />
@@ -28,7 +28,7 @@ const Payment = ({ values, touched, errors, handleBlur, handleChange }) => {
           onChange={handleChange}
           value={values.phoneNumber}
           name="phoneNumber"
-          erorr={!!touched.phoneNumber && !!errors.phoneNumber}
+          error={!!touched.phoneNumber && !!errors.phoneNumber}
           helperText={touched.phoneNumber && errors.phoneNumber}
           sx={{ gridColumn: "span 4", marginBottom: "15px" }}
         />
@@ -40,7 +40,7 @@ const Payment = ({ values, touched, errors, handleBlur, handleChange }) => {
           onChange={handleChange}
           value={values.phoneNumber}
           name={"phoneNumber"}
-          erorr={!!touched.phoneNumber && !!errors.phoneNumber}
+          error={!!touched.phoneNumber && !!errors.phoneNumber}
           helperText={touched.phoneNumber && errors.phoneNumber}
           sx={{ gridColumn: "span 4" }}
         />

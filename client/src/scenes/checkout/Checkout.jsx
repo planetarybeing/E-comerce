@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Box, Button, Stepper, Step, StepLabel } from "@mui/material";
-import { Formik } from "fromik";
+import { Formik } from "formik";
 import { useState } from "react";
 import * as yup from "yup";
 import Shipping from "./Shipping";
@@ -9,7 +9,7 @@ import { shades } from "../../theme";
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(
-    pk_test_51NHw79CtW00Y0bTHum5ZyZPHCCUJPbbHPH5kCChT5fDhy6SLu9ly1tkTKtqOEl5ZLR254zJN6BazVbYWVqGCC46900qiTnoKlp
+    "pk_test_51NHw79CtW00Y0bTHum5ZyZPHCCUJPbbHPH5kCChT5fDhy6SLu9ly1tkTKtqOEl5ZLR254zJN6BazVbYWVqGCC46900qiTnoKlp"
 );
 
 const initialValues = {
@@ -55,31 +55,31 @@ const checkoutSchema = [
       isSameAddress: yup.boolean(),
       firstName: yup.string().when("isSameAddress", {
         is: false,
-        then: yup.string.required("isSameAdress"),
+        then: yup.string.required("isSameAddress"),
       }),
       lastName: yup.string().when("isSameAddress", {
         is: false,
-        then: yup.string.required("isSameAdress"),
+        then: yup.string.required("isSameAddress"),
       }),
       street1: yup.string().when("isSameAddress", {
         is: false,
-        then: yup.string.required("isSameAdress"),
+        then: yup.string.required("isSameAddress"),
       }),
       country: yup.string().when("isSameAddress", {
         is: false,
-        then: yup.string.required("isSameAdress"),
+        then: yup.string.required("isSameAddress"),
       }),
       apt: yup.string().when("isSameAddress", {
         is: false,
-        then: yup.string.required("isSameAdress"),
+        then: yup.string.required("isSameAddress"),
       }),
       state: yup.string().when("isSameAddress", {
         is: false,
-        then: yup.string.required("isSameAdress"),
+        then: yup.string.required("isSameAddress"),
       }),
       zipCode: yup.string().when("isSameAddress", {
         is: false,
-        then: yup.string.required("isSameAdress"),
+        then: yup.string.required("isSameAddress"),
       }),
     }),
   }),
@@ -95,7 +95,7 @@ const Checkout = () => {
   const isFirstStep = activeStep === 0;
   const isSecondStep = activeStep === 1;
 
-  const handleFormSumbit = async (values, actions) => {
+  const handleFormSubmit = async (values, actions) => {
     setActiveStep(activeStep + 1);
 
     //copy the billing address onto shipping address
@@ -148,7 +148,7 @@ const Checkout = () => {
       </Stepper>
       <Box>
         <Formik
-          onSubmit={handleFormSumbit}
+          onSubmit={handleFormSubmit}
           initialValues={initialValues}
           validationSchema={checkoutSchema[activeStep]}
         >
